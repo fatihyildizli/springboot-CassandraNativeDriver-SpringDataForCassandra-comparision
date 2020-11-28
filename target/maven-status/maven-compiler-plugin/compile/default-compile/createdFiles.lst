@@ -1,0 +1,4 @@
+com\example\demo\controller\HelloWorldController.class
+com\example\demo\DemoApplication.class
+com\example\demo\entity\SearchItem.class
+com\example\demo\dao\SampleRepository.class
