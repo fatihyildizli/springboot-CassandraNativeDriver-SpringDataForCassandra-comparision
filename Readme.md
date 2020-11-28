@@ -6,7 +6,7 @@ In this POC project, I will compare the performance of two different drivers in 
  Spring Data for Cassandra & Cassandra Native Driver. The behaviors of CRUD operations in REST API format were compared. This project was coded for proofing of concept without any high level architecture or any software pattern. The main goal is to compare the performance of the two drivers for 1M transaction loop. **_`This article contains only informational results for local Cassandra Cluster. It may vary under different conditions`_**.
 
 
-**Medium Link:** 
+**Medium Link:** https://medium.com/@fatih_yildizli/apache-cassandra-spring-data-for-cassandra-cassandra-native-driver-crud-performance-comparison-97843e98e162
 
 ###### **‍🗨 Performance Ranking for CRUD 1 million row**
 
