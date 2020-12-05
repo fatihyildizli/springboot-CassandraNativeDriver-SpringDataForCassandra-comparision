@@ -1,5 +1,15 @@
 ###### Apache Cassandra | Spring Data for Cassandra - Cassandra Native Driver CRUD Performance Comparison
 
+[![GitHub stars](https://img.shields.io/github/stars/fatihyildizli/springboot-CassandraNativeDriver-SpringDataForCassandra-comparision.svg)](https://github.com/fatihyildizli/springboot-CassandraNativeDriver-SpringDataForCassandra-comparision/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/fatihyildizli/springboot-CassandraNativeDriver-SpringDataForCassandra-comparision.svg)](https://github.com/fatihyildizli/springboot-CassandraNativeDriver-SpringDataForCassandra-comparision/network/members)
+[![Total Downloads](https://img.shields.io/packagist/dt/fatihyildizli/springboot-CassandraNativeDriver-SpringDataForCassandra-comparision.svg?style=flat-square)](https://packagist.org/packages/fatihyildizli/springboot-CassandraNativeDriver-SpringDataForCassandra-comparision)
+![License](https://img.shields.io/github/license/fatihyildizli/springboot-CassandraNativeDriver-SpringDataForCassandra-comparision)
+![Code size](https://img.shields.io/github/repo-size/fatihyildizli/springboot-CassandraNativeDriver-SpringDataForCassandra-comparision)
+![Top Language](https://img.shields.io/github/languages/top/fatihyildizli/springboot-CassandraNativeDriver-SpringDataForCassandra-comparision)
+![Languages](https://img.shields.io/github/languages/count/fatihyildizli/springboot-CassandraNativeDriver-SpringDataForCassandra-comparision)
+![Views](https://img.shields.io/github/search/fatihyildizli/springboot-CassandraNativeDriver-SpringDataForCassandra-comparision/springboot-CassandraNativeDriver-SpringDataForCassandra-comparision)
+
+
 **✅ My Purpose**
 
 In this POC project, I will compare the performance of two different drivers in rest architecture on spring boot as
