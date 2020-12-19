@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 
 /**
@@ -53,10 +54,7 @@ public class CompareController {
     @ResponseBody
     public ResponseEntity<?> insertSpringData(@PathVariable("count") int count) {
         Long startTime = System.currentTimeMillis();
-        for (int i = 0; i < count; i++) {
-            springDataRepository.insert(i, "yıldızlı", "fatih");
-            System.out.println("spring data insert id:" + i);
-        }
+        IntStream.range(0,count).forEach(i-> springDataRepository.insert(i, "yıldızlı", "fatih"));
         long finishTime = System.currentTimeMillis();
         return new ResponseEntity<>("Elapsed:" + (finishTime - startTime) + "ms",
                 HttpStatus.OK);
@@ -68,10 +66,7 @@ public class CompareController {
     public ResponseEntity<?> insertCassandraNative(@PathVariable("count") int count) {
 
         Long startTime = System.currentTimeMillis();
-        for (int i = 0; i < count; i++) {
-            cassandraNativeRepository.insertAll(i);
-            System.out.println("cassandra native insert id:" + i);
-        }
+        IntStream.range(0,count).forEach(i-> cassandraNativeRepository.insertAll(i));
         long finishTime = System.currentTimeMillis();
         return new ResponseEntity<>("Elapsed:" + (finishTime - startTime) + "ms",
                 HttpStatus.OK);
@@ -81,13 +76,10 @@ public class CompareController {
     @CrossOrigin(origins = {"*"})
     @RequestMapping(path = "/update/springdata/{count}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> updateSpringData(@PathVariable("count") long count) {
+    public ResponseEntity<?> updateSpringData(@PathVariable("count") int count) {
 
         Long startTime = System.currentTimeMillis();
-        for (int i = 0; i < count; i++) {
-            springDataRepository.update(i, "FYildizli", "fatih");
-            System.out.println("spring data update id:" + i);
-        }
+        IntStream.range(0,count).forEach(i-> springDataRepository.update(i, "FYildizli", "fatih"));
         long finishTime = System.currentTimeMillis();
         return new ResponseEntity<>("Elapsed:" + (finishTime - startTime) + "ms",
                 HttpStatus.OK);
@@ -96,13 +88,10 @@ public class CompareController {
     @CrossOrigin(origins = {"*"})
     @RequestMapping(path = "/update/cassandraNative/{count}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> updateCassandraNative(@PathVariable("count") long count) {
+    public ResponseEntity<?> updateCassandraNative(@PathVariable("count") int count) {
 
         Long startTime = System.currentTimeMillis();
-        for (int i = 0; i < count; i++) {
-            cassandraNativeRepository.updateAll(i);
-            System.out.println("cassandra native update id:" + i);
-        }
+        IntStream.range(0,count).forEach(i-> cassandraNativeRepository.updateAll(i));
         long finishTime = System.currentTimeMillis();
         return new ResponseEntity<>("Elapsed:" + (finishTime - startTime) + "ms",
                 HttpStatus.OK);
@@ -111,13 +100,10 @@ public class CompareController {
     @CrossOrigin(origins = {"*"})
     @RequestMapping(path = "/delete/springdata/{count}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> deleteSpringData(@PathVariable("count") long count) {
+    public ResponseEntity<?> deleteSpringData(@PathVariable("count") int count) {
 
         Long startTime = System.currentTimeMillis();
-        for (int i = 0; i < count; i++) {
-            springDataRepository.delete(i);
-            System.out.println("spring data delete id:" + i);
-        }
+        IntStream.range(0,count).forEach(i-> springDataRepository.delete(i));
         long finishTime = System.currentTimeMillis();
         return new ResponseEntity<>("Elapsed:" + (finishTime - startTime) + "ms",
                 HttpStatus.OK);
@@ -126,13 +112,10 @@ public class CompareController {
     @CrossOrigin(origins = {"*"})
     @RequestMapping(path = "/delete/cassandraNative/{count}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> deleteCassandraNative(@PathVariable("count") long count) {
+    public ResponseEntity<?> deleteCassandraNative(@PathVariable("count") int count) {
 
         Long startTime = System.currentTimeMillis();
-        for (int i = 0; i < count; i++) {
-            cassandraNativeRepository.deleteAll(i);
-            System.out.println("cassandra native delete id:" + i);
-        }
+        IntStream.range(0,count).forEach(i-> cassandraNativeRepository.deleteAll(i));
         long finishTime = System.currentTimeMillis();
         return new ResponseEntity<>("Elapsed:" + (finishTime - startTime) + "ms",
                 HttpStatus.OK);
