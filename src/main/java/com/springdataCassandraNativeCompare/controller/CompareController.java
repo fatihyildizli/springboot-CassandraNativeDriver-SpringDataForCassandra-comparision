@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 
 
 /**
@@ -31,7 +31,7 @@ public class CompareController {
     @RequestMapping(path = "/select/springdata", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<?> selectSpringData() {
-        Long startTime = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
         List<DummyItem> response = springDataRepository.selectAll();
         long finishTime = System.currentTimeMillis();
         return new ResponseEntity<>("Elapsed:" + (finishTime - startTime) + "ms",
@@ -42,7 +42,7 @@ public class CompareController {
     @RequestMapping(path = "/select/cassandraNative", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<?> selectCassandraNative() {
-        Long startTime = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
         List<DummyItem> response = cassandraNativeRepository.selectAll();
         long finishTime = System.currentTimeMillis();
         return new ResponseEntity<>("Elapsed:" + (finishTime - startTime) + "ms",
@@ -52,9 +52,9 @@ public class CompareController {
     @CrossOrigin(origins = {"*"})
     @RequestMapping(path = "/insert/springdata/{count}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> insertSpringData(@PathVariable("count") int count) {
-        Long startTime = System.currentTimeMillis();
-        IntStream.range(0,count).forEach(i-> springDataRepository.insert(i, "yıldızlı", "fatih"));
+    public ResponseEntity<?> insertSpringData(@PathVariable("count") long count) {
+        long startTime = System.currentTimeMillis();
+        LongStream.range(0,count).forEach(i-> springDataRepository.insert(i, "yıldızlı", "fatih"));
         long finishTime = System.currentTimeMillis();
         return new ResponseEntity<>("Elapsed:" + (finishTime - startTime) + "ms",
                 HttpStatus.OK);
@@ -63,10 +63,10 @@ public class CompareController {
     @CrossOrigin(origins = {"*"})
     @RequestMapping(path = "/insert/cassandraNative/{count}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> insertCassandraNative(@PathVariable("count") int count) {
+    public ResponseEntity<?> insertCassandraNative(@PathVariable("count") long count) {
 
-        Long startTime = System.currentTimeMillis();
-        IntStream.range(0,count).forEach(i-> cassandraNativeRepository.insertAll(i));
+        long startTime = System.currentTimeMillis();
+        LongStream.range(0,count).forEach(i-> cassandraNativeRepository.insertAll(i));
         long finishTime = System.currentTimeMillis();
         return new ResponseEntity<>("Elapsed:" + (finishTime - startTime) + "ms",
                 HttpStatus.OK);
@@ -76,10 +76,10 @@ public class CompareController {
     @CrossOrigin(origins = {"*"})
     @RequestMapping(path = "/update/springdata/{count}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> updateSpringData(@PathVariable("count") int count) {
+    public ResponseEntity<?> updateSpringData(@PathVariable("count") long count) {
 
-        Long startTime = System.currentTimeMillis();
-        IntStream.range(0,count).forEach(i-> springDataRepository.update(i, "FYildizli", "fatih"));
+        long startTime = System.currentTimeMillis();
+        LongStream.range(0,count).forEach(i-> springDataRepository.update(i, "FYildizli", "fatih"));
         long finishTime = System.currentTimeMillis();
         return new ResponseEntity<>("Elapsed:" + (finishTime - startTime) + "ms",
                 HttpStatus.OK);
@@ -88,10 +88,10 @@ public class CompareController {
     @CrossOrigin(origins = {"*"})
     @RequestMapping(path = "/update/cassandraNative/{count}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> updateCassandraNative(@PathVariable("count") int count) {
+    public ResponseEntity<?> updateCassandraNative(@PathVariable("count") long count) {
 
-        Long startTime = System.currentTimeMillis();
-        IntStream.range(0,count).forEach(i-> cassandraNativeRepository.updateAll(i));
+        long startTime = System.currentTimeMillis();
+        LongStream.range(0,count).forEach(i-> cassandraNativeRepository.updateAll(i));
         long finishTime = System.currentTimeMillis();
         return new ResponseEntity<>("Elapsed:" + (finishTime - startTime) + "ms",
                 HttpStatus.OK);
@@ -100,10 +100,10 @@ public class CompareController {
     @CrossOrigin(origins = {"*"})
     @RequestMapping(path = "/delete/springdata/{count}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> deleteSpringData(@PathVariable("count") int count) {
+    public ResponseEntity<?> deleteSpringData(@PathVariable("count") long count) {
 
-        Long startTime = System.currentTimeMillis();
-        IntStream.range(0,count).forEach(i-> springDataRepository.delete(i));
+        long startTime = System.currentTimeMillis();
+        LongStream.range(0,count).forEach(i-> springDataRepository.delete(i));
         long finishTime = System.currentTimeMillis();
         return new ResponseEntity<>("Elapsed:" + (finishTime - startTime) + "ms",
                 HttpStatus.OK);
@@ -112,10 +112,10 @@ public class CompareController {
     @CrossOrigin(origins = {"*"})
     @RequestMapping(path = "/delete/cassandraNative/{count}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<?> deleteCassandraNative(@PathVariable("count") int count) {
+    public ResponseEntity<?> deleteCassandraNative(@PathVariable("count") long count) {
 
-        Long startTime = System.currentTimeMillis();
-        IntStream.range(0,count).forEach(i-> cassandraNativeRepository.deleteAll(i));
+        long startTime = System.currentTimeMillis();
+        LongStream.range(0,count).forEach(i-> cassandraNativeRepository.deleteAll(i));
         long finishTime = System.currentTimeMillis();
         return new ResponseEntity<>("Elapsed:" + (finishTime - startTime) + "ms",
                 HttpStatus.OK);
